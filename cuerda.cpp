@@ -37,20 +37,23 @@ for (int j = 0 ; j<L ;j++){
 }
 
 int main(){
-
+//matriz
 float M[N][L];
+//asignacion de las condiciones iniciales a la matriz como parametro
 CI(M[N][L]);
+//calculo de delta de tiempo
 int t = t0 + dt;
 int x;
+//recorrido para el cambio en el x y en el tiempo de las ecuaciones diferenciales  
 for(x = 1 ; x<L-1; x++){
 
-	M[t][x] = (dt*dt/(dx*dx*c*c))*(string_history[t-1][x+1] - 2*string_history[t-1][x] + string_history[t-1][x-1]) + 2*string_history[t-1][x] - string_history[t-1][x];
+	M[t][x] = (dt*dt/(dx*dx*c*c))*(M[t-1][x+1] - 2*M[t-1][x] + M[t-1][x-1]) + 2*M[t-1][x] - M[t-1][x];
 
 }
 
 for(t = t0 + 2*dt ; t<N; t++){
 	for(x=1; x<L-1 ; x++){
-		M[t][x] = (dt*dt/(dx*dx*c*c))*(string_history[t-1][x+1] - 2*string_history[t-1][x] + string_history[t-1][x-1]) + 2*string_history[t-1][x] - string_history[t-2][x];
+		M[t][x] = (dt*dt/(dx*dx*c*c))*(M[t-1][x+1] - 2*M[t-1][x] + M[t-1][x-1]) + 2*M[t-1][x] - M[t-2][x];
 }
 
 }
