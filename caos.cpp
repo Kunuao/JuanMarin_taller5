@@ -27,19 +27,20 @@ double y4[t];
 
 for (i = 0 ; i<3000 -1 ; i++){
 	
-k1 = -2*y[i];
+k1 = y[i]*-2*q1 /  pwd(3/2,(4(q1*q1) + epsilon));
 y1 = y[i] + k1*(deltaT/2);
 
-k2= -2*y1;
+k2= y[i]*-2*q1 /  pwd(3/2,(4(q1*q1) + epsilon))*y1;
 y2= y[i] + k2*(deltaT/2);
 
-k3=
+k3= y[i]*-2*q1 /  pwd(3/2,(4(q1*q1) + epsilon));
 y3=y[i] + k3*deltaT;
 
-k4= -2*y3;
+k4= y[i]*-2*q1 /  pwd(3/2,(4(q1*q1) + epsilon))*y3;
 
 y[i+1]= y[i] + (k1+2*k2+2*k3+k4) * deltaT/6 ;
 
 
 } 
+
 
