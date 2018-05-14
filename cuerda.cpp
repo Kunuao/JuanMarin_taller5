@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <fstream>
 using namespace std;
 //constantes y variables dadas por el problema
 int T = 40; 
@@ -17,7 +16,7 @@ int j;
 
 //funcion para el planteamiento de las condiciones iniciales 
 
-void CI1(float Matriz[N][L]){
+void CI(float Matriz[N][L]){
 
 for(int i = 0 ; i<N; i++){
 	for(int j= 0 ; j < L ; j++){
@@ -40,7 +39,7 @@ for (int j = 0 ; j<L ;j++){
 int main(){
 
 float string_history[N][L];
-CI1(string_history[N][L]);
+CI(string_history[N][L]);
 int t = t0 + dt;
 int x;
 for(x = 1 ; x<L-1; x++){
