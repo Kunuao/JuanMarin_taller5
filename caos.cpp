@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 using namespace std; 
-
+// constantes y variables y condiciones iniciales
 double a = 1/2*sqrt(2)
 double epsilon = 10* pwd(-3)
 double q1 = a; 
@@ -11,6 +11,7 @@ double p2 = 0.0;
 
 double deltaT= 0.0006; 
 int t = 3000;
+//IMPLEMENTACION DEOL METODO se aplica para las 4 p1 prima y p2 prima
 
 double y[t];
 
